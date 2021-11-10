@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <div id="root"></div>
+        <!-- <div class="title">Hello World</div>
+        <img src='https://lorempixel.com/400/200' /> -->
+        <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+        <script type="text/babel">
+            const Title = <div className='title'>Hello World</div>; //JSX using babel
+            // const Title = React.createElement('div', {
+            //     className: 'title'
+            // }, 'Hello World');
+            const Img = React.createElement('img', {
+                src: 'https://lorempixel.com/400/200'
+            });
+            const App = React.createElement('div', null, Title, Img)
+            const Hello = React.createElement('div', null, 'Hello Pam Piu');
+            const root = document.getElementById('root');
+            ReactDOM.render(App, root);
+        </script>
+    </body>
+</html>

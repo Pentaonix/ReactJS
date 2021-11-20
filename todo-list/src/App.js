@@ -9,22 +9,27 @@ class App extends Component {
     super();
     //array for data 
     this.TodoItem = [
-      "Di choi",
-      "Di hoc",
-      "Di ngu"
+      {title: "Di choi", isComplete: false},
+      {title: "Di hoc", isComplete: true},
+      {title: "Di ngu", isComplete: true}
     ];
   }
   render() {
-    return (
-      <div className="App">{
-        //render list from an array
-        this.TodoItem.map((item, index) => <TodoItem key={index} title={item} />)
-      }
-          {/* <TodoItem title="Di choi"/>
-          <TodoItem title="Di hoc"/>
-          <TodoItem title="Di ngu"/> */}
-      </div>
-    );
+    if (this.TodoItem.length > 0){
+      return (
+        <div className="App">{
+          //render list from an array
+          this.TodoItem.map((item, index) => 
+            <TodoItem key={index} item={item} />
+          )
+        }
+        </div>
+      );
+    } else {
+      return (
+        <div className="App">{'Nothing here.'}</div>
+      )
+    };
   }
 }
 
